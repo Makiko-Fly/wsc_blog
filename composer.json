@@ -1,0 +1,20 @@
+{
+	"name": "wsc_blog/wsc_blog",
+	"description": "A blog demo base on EvaEngine",
+	"license": "BSD-3-Clause",
+	"authors": [
+		{
+			"name": "ChenFei"
+		}
+	],
+	"require": {
+		"php": ">=5.3.10",
+		"evaengine/eva-common": "dev-master"
+	},
+	"repositories": [
+		{
+            "type": "git",
+            "url": "https://github.com/EvaEngine/EvaEngine.git"
+		}
+	]
+}

@@ -29,3 +29,5 @@ Screenshots
 ---------
 
 ![Alt text](/screen_shots/index-index.png?raw=true "index-index")
+
+![Alt text](/screen_shots/user-register.png?raw=true "user-register")

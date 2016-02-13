@@ -10,8 +10,8 @@ class IndexController extends ControllerBase
 {
     public function indexAction()
     {			
-		$limit = 5;
-		$pageNum = $this->request->getQuery('pageNum', 'int', 1);
+		$limit = 2;
+		$page = $this->request->getQuery('page', 'int', 2);
 		
 		$articlesModel = new Articles();
 		$queryParams = array(
@@ -23,11 +23,14 @@ class IndexController extends ControllerBase
 		$paginator = new Paginator(array(
 		    "builder" => $queryBuilder,
 		    "limit"=> $limit,
-		    "page" => $pageNum
+		    "page" => $page
 		));
 		
 		$pager = $paginator->getPaginate();
 		$this->view->setVar('pager', $pager);
+		
+		// mdl_echo("\$pager: " . var_export($pager, true));
+		
 		// // TODO... Why need $query?
 		// $query = $queryBuilder->getQuery();
 		// $paginator->setQuery($query->getSql());

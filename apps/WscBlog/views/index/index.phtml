@@ -47,12 +47,15 @@
 							</div>
 							<!-- Articles End -->
                             
-                            <!-- Pagination Start -->
-                            <div class="text-center">
-                                <ul class="pagination">
-                                </ul>
-                            </div>
-                            <!-- Pagination End -->                            
+							<!-- Pagination Start -->
+							<div class="text-center">
+								<?php $this->partial("paginator", array(
+									'pagerUrl' => 'index/index',
+									'pager' => $pager,
+									)); 
+								?>
+							</div>
+							<!-- Pagination End -->                            
 						</div>
 					</div>
 	        	</div>

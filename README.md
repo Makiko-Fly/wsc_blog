@@ -18,4 +18,9 @@ use version 1.3, newer version doesn't work with current EvaEngine.
 
 ####Step2. Install dependency libs
 
-php composer.phar install
+    php composer.phar install
+
+Screenshots
+---------
+
+![Alt text](/screen_shots/index-index.png?raw=true "index-index")

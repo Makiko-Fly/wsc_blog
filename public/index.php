@@ -50,6 +50,7 @@ function mdl_echo($str)
 	fclose($handle);
 }
 
+date_default_timezone_set('Asia/Shanghai');
 
 $engine = new Engine(__DIR__ . '/..', 'wsc_blog');
 

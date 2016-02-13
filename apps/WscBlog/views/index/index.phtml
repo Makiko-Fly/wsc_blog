@@ -1,0 +1,63 @@
+	<!-- Content Start -->
+	<div class="contents">
+		<div class="container">        
+			<div class="row article-page article-item">
+		        <!-- Left Side Start -->
+		    	<div class="col-md-12">	            	
+					<div class="row">
+						<div class="col-md-12">
+			            	<!-- Articles Start -->
+				        	<div class="panel">
+								<!-- Panel-heading Start -->
+								<div class="panel-heading">
+                                    <h2>
+                                        <i class="icon-speaker"></i>最新文章
+                                    </h2>
+								</div>
+								<!-- Panel-heading End -->
+								<!-- Panel-body Start -->
+								<div class="panel-body panel-no-padding listbox">
+									<!-- list Start -->
+									<div class="listbox-post-list">
+										<?php foreach ($pager->items as $article): ?>
+										<div class="media">
+											<a class="pull-left" href="">
+												<img class="media-object visible-xs" alt="" src="" />
+												<img class="media-object2 hidden-xs" alt="" src="" />
+											</a>
+											<div class="media-body">
+												<div class='post-title'>
+													<a href="">
+														<h3>
+															<?php echo $article['title'] ?>
+														</h3>
+													</a>
+												</div>
+												<div class='post-detail hidden-xs'>
+													<?php echo $article['summary'] ?>
+							            		</div>
+												<p><a href="" class='post-editor'></a> wsc_bloger | 2000 阅读</p>
+											</div>
+										</div>
+										<?php endforeach ?>
+									</div>
+									<!-- list End -->
+								</div>
+								<!-- Panel-body End -->
+							</div>
+							<!-- Articles End -->
+                            
+                            <!-- Pagination Start -->
+                            <div class="text-center">
+                                <ul class="pagination">
+                                </ul>
+                            </div>
+                            <!-- Pagination End -->                            
+						</div>
+					</div>
+	        	</div>
+	        	<!-- Left Side End -->	
+	    	</div>
+		</div>
+	</div>
+	<!-- Content End -->

@@ -169,28 +169,27 @@ return array(
 
     ),
     'dbAdapter' => array(
-        'prefix' => 'eva_',
-        'master' => array(/*
+        'prefix' => '',
+        'master' => array(
             'adapter' => 'mysql',
-            'host' => '192.168.1.228',
-            'dbname' => 'eva',
+            'host' => '127.0.0.1',
+            'dbname' => 'wsc_blog',
             'username' => 'root',
             'password' => '',
             'charset'  => 'utf8',
-            'prefix' => 'eva_',
-            */
+            'prefix' => '',
         ),
-        'slave' => array(/*
+		// set slave the same as master for now.
+        'slave' => array(
             'slave1' => array(
                 'adapter' => 'mysql',
-                'host' => '192.168.1.233',
-                'dbname' => 'eva',
+                'host' => '127.0.0.1',
+                'dbname' => 'wsc_blog',
                 'username' => 'root',
                 'password' => '',
                 'charset'  => 'utf8',
-                'prefix' => 'eva_',
+                'prefix' => '',
             ),
-            */
         )
     ),
     'queue' => array(

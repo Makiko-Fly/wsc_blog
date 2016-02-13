@@ -1,0 +1,66 @@
+	<!-- Top Start -->
+	<div class="top visible-lg visible-md">
+	    <div class="container">
+	        <div class="row">
+				<!-- Top Menu Start -->
+	            <div class="col-md-12">
+	            	<div style="margin-top:10px;float:left;">
+	            		<a href="/">A WSC Demo Blog</a>
+	            	</div>
+					<?php if (false) { ?>					
+	            	<div>
+						<ul class="toolbar pull-right">
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle username" data-toggle="dropdown">
+								<img class="img-circle" alt="" src="<?php echo $article_img_base_url . $user['User']['user_photo_file_name']; ?>"  />
+									<span class=""><?php echo h($user['User']['nickname']); ?>
+									</span>
+								</a>
+	                        	<ul class="dropdown-menu">
+									<li>
+										<a href="/accounts/index" rel="nofollow">
+											<i class="pull-right fa fa-user"></i> <?php echo __("我的页面"); ?>
+										</a>
+									</li>
+									<li>
+										<a href="/accounts/setting" rel="nofollow">
+											<i class="pull-right fa fa-cog"></i> <?php echo __("我的设定") ?>
+										</a>
+									</li>
+									<li class="divider"></li>
+									<li>
+										<a href="#" onclick="userLogout();" rel="nofollow">
+											<i class="pull-right fa fa-sign-out"></i> <?php echo __("退出") ?>
+										</a>
+									</li>
+	                        	</ul>
+							</li>
+						</ul>
+					</div>
+					<?php } else { ?>	
+	            	<div>
+		                <ul class="list-unstyled top-data">
+		                	<li>
+						    	<a href="/articles/add" class="btn-u btn-u-purple hover-effect" rel="nofollow">
+									<i class="fa fa-pencil-square-o"></i>我要投稿
+								</a>
+		                	</li>
+		                    <li>
+		                    	<a href="/logins/" class="btn-u btn-u-orange hover-effect" rel="nofollow">
+		                    		<i class="fa fa-sign-in"></i>登录
+		                    	</a>
+		                    </li>
+		                    <li>
+		                    	<a href="/registrations/" class="btn-u btn-u-green hover-effect" rel="nofollow">
+		                    		<i class="fa fa-user"></i>注册
+		                    	</a>
+		                    </li>
+		                </ul>
+	            	</div>										
+					<?php } ?>						
+	            </div>
+	            <!-- Top Menu End -->
+	        </div>
+	    </div>
+	</div>
+	<!-- Top end -->

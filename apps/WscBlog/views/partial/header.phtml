@@ -7,33 +7,17 @@
 	            	<div style="margin-top:10px;float:left;">
 	            		<a href="/">A WSC Demo Blog</a>
 	            	</div>
-					<?php if (false) { ?>					
+					
+					<?php if ($user = $this->session->get('auth')) { ?>					
 	            	<div>
 						<ul class="toolbar pull-right">
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle username" data-toggle="dropdown">
-								<img class="img-circle" alt="" src="<?php echo $article_img_base_url . $user['User']['user_photo_file_name']; ?>"  />
-									<span class=""><?php echo h($user['User']['nickname']); ?>
-									</span>
+									<span class="">欢迎您：<?php echo $user['name']; ?></span>
 								</a>
-	                        	<ul class="dropdown-menu">
-									<li>
-										<a href="/accounts/index" rel="nofollow">
-											<i class="pull-right fa fa-user"></i> <?php echo __("我的页面"); ?>
-										</a>
-									</li>
-									<li>
-										<a href="/accounts/setting" rel="nofollow">
-											<i class="pull-right fa fa-cog"></i> <?php echo __("我的设定") ?>
-										</a>
-									</li>
-									<li class="divider"></li>
-									<li>
-										<a href="#" onclick="userLogout();" rel="nofollow">
-											<i class="pull-right fa fa-sign-out"></i> <?php echo __("退出") ?>
-										</a>
-									</li>
-	                        	</ul>
+								<a href="/user/logout" rel="nofollow">
+									<!-- <i class="pull-right fa fa-sign-out"></i> --> 退出
+								</a>
 							</li>
 						</ul>
 					</div>
@@ -46,12 +30,12 @@
 								</a>
 		                	</li>
 		                    <li>
-		                    	<a href="/logins/" class="btn-u btn-u-orange hover-effect" rel="nofollow">
+		                    	<a href="/user/login" class="btn-u btn-u-orange hover-effect" rel="nofollow">
 		                    		<i class="fa fa-sign-in"></i>登录
 		                    	</a>
 		                    </li>
 		                    <li>
-		                    	<a href="/registrations/" class="btn-u btn-u-green hover-effect" rel="nofollow">
+		                    	<a href="/user/register" class="btn-u btn-u-green hover-effect" rel="nofollow">
 		                    		<i class="fa fa-user"></i>注册
 		                    	</a>
 		                    </li>

@@ -8,6 +8,7 @@
 
 <body>
 	<?php $this->partial("header") ?>
+	<?= $this->tag->flashOutput() ?>
 	<?= $this->getContent() ?>
 	<?php $this->partial("copyright") ?>
 </body>

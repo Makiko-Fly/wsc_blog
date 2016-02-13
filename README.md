@@ -6,7 +6,12 @@ A demo using EvaEngine
 Env Setup
 ---------
 
-(Make sure PHP5.5 or plus is installed on the system.)
+####Step0. Prepare PHP
+version requirement: 
+5.5 or plus.
+
+php.ini:
+short_open_tag = On
 
 ####Step1. Build Phalcon
 use version 1.3, newer version doesn't work with current EvaEngine.

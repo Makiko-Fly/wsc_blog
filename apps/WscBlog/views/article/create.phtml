@@ -1,0 +1,112 @@
+
+
+<script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="/plugin/ckeditor/ckeditor.js"></script>
+
+
+<!-- Content Start -->
+<div class="contents">
+	<div class="container">
+	    <div class="row article-page article-item">
+	    	<!-- Left Side Start -->
+	        <div class="col-md-8">
+				<div class="row">
+					<div class="col-md-12">
+						<!-- Pickup Start -->
+						<div class="panel">
+							<!-- Panel-heading Start -->
+							<div class="panel-heading">
+								<h2>
+									撰写新文章
+								</h2>
+							</div>
+							<!-- Panel-body Start -->
+							<div class="panel-body margin-bottom-20">
+								<div class="col-md-10">
+									<div class="viewtop-blocks margin-bottom-20">
+										<div class="row">
+											<div class="col-md-12">
+												<p>'*╮(๑•́ ₃•̀๑)╭ 有木有想要安利小伙伴的片子，或血淋淋的吐槽呢？请随意发挥</p>
+											</div>
+										</div>
+									</div>
+									<!-- Form START-->
+									<form method="post" action="/article/create">
+										<input name="id" type="hidden">
+										<input name="cover_img_data" hidden='true'>
+
+									    <label>标题  <span class="color-red">*</span></label>
+										<input name="title" class="form-control margin-bottom-20" type="text" maxlength='60'>
+
+										<label>上传封面图（200×150最佳)<span class="color-red">*</span></label>
+										<div>
+											<div class="imageBox">
+										        <div class="thumbBox"></div>
+										        <div class="spinner" style="display: none">亲，加载一张图片</div>
+										    </div>
+										    <div class="action margin-bottom-0">
+										        <input type="file" id="ArticleCoverImgFile" style="float:left; width: 250px">
+										        <input type="button" id="btnCrop" value="切图" style="float: right">
+										        <input type="button" id="btnZoomIn" style="width:27px;height:27px; white-space: normal; background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDE0IDc5LjE1Njc5NywgMjAxNC8wOC8yMC0wOTo1MzowMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NTM5NkQ3M0NEMUVBMTFFNEFBNzE4RTRDMEUwQTNENUYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NTM5NkQ3M0REMUVBMTFFNEFBNzE4RTRDMEUwQTNENUYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo1MjMwNUQ4OUQxRDgxMUU0QUE3MThFNEMwRTBBM0Q1RiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo1MjMwNUQ4QUQxRDgxMUU0QUE3MThFNEMwRTBBM0Q1RiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PndhCZAAAAICSURBVHjapJRPSNRBFMd/66qFRRIEdgkED0FEiCsmGh1SQdlFhEKjgwcPQZegIDuYHg3p0qlACxUP/fEgwoqpZYoQiOwxkIwgCaJC7GCRa2mfge/E89cuuPjgw+/N/Ga+8+bNzIvE4/EgZFG4CK0Qg2JIw2eYgCF47wcnk8ldk/NDYjUwAKeC/60EyqETHuq7GR5kBS9r9QNqf4FZ+AQHoQKqoQCuQxU0wXcrmKfveRiWmFv1BpyAK4rECZyD07CgOU78eSKRiIYFXZT9UAi/wCX1Pmxl2PYy1MO42g3QHha8BCfVvg2vzP9u2BE+PWlF/lHtLqKMWMFW+d+U7L3YT7gnv0z5/XcoMfkvzTbvQkSn7q0XtuE1TMGk+VcJKS9Yos5VM6DTHJi3W/r+luCqFnDjjtstb8g/FORmRWbRTSvokxsLvRa35R7TV6C+OxnGr1jBF/LPwpkcIrxqTn3OHsqw8uMieAAXNCjQFfL+thFrhDb5Y7znNRvhOwk5q4Vnyo+zN9AnvGAdPNX2nY1menruQi/Kb9GLuAmlGlMkoScwrQrk7REXu8o3IqZ8HYYRCeZqP6CZrc/au7ahZ9gBH7JMTGvRZlg3/e7KjRFpdbge/oFBlbFKU2ADLTIPX01hmIGjah+Bx/lZInHFYElks1QG0WN5wf4spXL2VpFf+yvAAMw7cj/oj1vvAAAAAElFTkSuQmCC) no-repeat; float: right">
+										        <input type="button" id="btnZoomOut" style="width:27px; height:27px; white-space: normal;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDE0IDc5LjE1Njc5NywgMjAxNC8wOC8yMC0wOTo1MzowMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NTIzMDVEODdEMUQ4MTFFNEFBNzE4RTRDMEUwQTNENUYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NTIzMDVEODhEMUQ4MTFFNEFBNzE4RTRDMEUwQTNENUYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo1MjMwNUQ4NUQxRDgxMUU0QUE3MThFNEMwRTBBM0Q1RiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo1MjMwNUQ4NkQxRDgxMUU0QUE3MThFNEMwRTBBM0Q1RiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pu2qE+YAAAHYSURBVHjapJTLK4RRGMa/YVwaIlFjo5SFkiQjJmSDopkmRUMWFhbKRrEYC3+AhY0V5RKThdtCauQ+yEqapRJSpITEYohxfU49n16fGUye+vW953S+57zn9pocDodmUCxoAG5gA6kgBC7AIpgAx/pgn8/35WezwawMjIA87busoBB4wBC/T8ZB0rCZsyewfQn84BwkgiJgB3GgE5SAOnAnDWP4rQRemqlZu0AWaGEmyqAC5IMd/qPMZ51OZ6zRUGU5DOLBI1CbOgCewyz7AFSDBbZrQKvRsBHkst0DNrSfFWLmp2z3IkuTNHQzvuZm/0UPoJ9xDvf381BsjNfFMvuAKYLZJlgBS6KvGAR0Qys7z8QAjzgwo15oqMa/cVymXHKQcZIWnSxi0ie5ZLW56WLp+mv5TXL8kcxwmXEpKIgiw3Zx6lvS0MvDUPEg7+NvqgVNjOfxnm+k4SGNlMrBDPcnkqrAtLgFc+GenrrQu4zr+SK6QTbHWGg0BVZZgXSN4mKX6A2TKF/JYJKG0eoeuLB0v7xrQT7DNnDyw7NTk7rArehXV24emdqN9fAVjLOMFYsCq3GSbXAlCsMaSGM7BYyZI2TyDvZIJAXCmGbEaP9TgOVsn5l3fAgwAAa6ZmFvtbmTAAAAAElFTkSuQmCC) no-repeat; float: right">
+										    </div>
+										    <div class="margin-bottom-20">
+											    <div id='currentCoverTitle' style='display:none;'>
+													<label>汝选取的封面</label>
+												</div>
+											    <div class="cropped" id="croppedCoverImg">
+													<!-- <img src="" style="width:85px; height:63px;"></img> -->
+											    </div>
+											</div>
+										</div>
+
+									    <label>概括<span class="color-red">*</span></label>
+										<input name="summary" type="text" class="form-control margin-bottom-5" rows="5">
+									    <label>正文 <span class="color-red">*</span></label><br/>
+									    <div class="col-12">
+											<input name="artileText" type="textarea" class="ckeditor" rows='10' colos='80' id="ArticleText">
+											<script type="text/javascript">
+												var editor = CKEDITOR.replace( 'ArticleText', {
+												    	// filebrowserBrowseUrl: '/articles/imgBrowse',
+														filebrowserUploadUrl: '/articles/upload',
+													    on: {
+													        instanceReady: function() {
+													            this.dataProcessor.htmlFilter.addRules( {
+													                elements: {
+													                    img: function( el ) {
+													                        if ( !el.attributes.class )
+													                        	el.attributes.class='img-responsive';
+																			var widthFilter = /width:\s*\d+px;?/g;
+																			var imgWidth = widthFilter.exec(el.attributes.style);
+													                        el.attributes.style = imgWidth ? imgWidth[0] : null;	
+													                    }
+													                }
+													            } );            
+													        }
+													    },
+											            language : 'zh-cn',
+											            toolbar : 'Full',
+        												uiColor : '#46C1E4'
+													});
+											</script>
+                                        </div>
+
+									    <hr>
+									    <div class="row">
+									        <div class="col-lg-12 text-right">  
+												<input type='submit' value='保存'>
+									        </div>
+									    </div>
+									</form>
+									<!-- Form END-->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+	    	</div>
+	    	<!-- Left Side End -->
+		</div>
+	</div>
+</div>
+<!-- Content End -->

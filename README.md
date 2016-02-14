@@ -28,8 +28,9 @@ use version 1.3, newer version doesn't work with current EvaEngine.
 TODO
 ---------
 1. 阅读 EvaEngine 源代码，更深刻地理解该框架
-2. 设置 Model 之间 hasMany，hasOne 等映射关系
-3. 检查为什么 / 路径没有被 router 解析到
+2. 实现封面图片上传和文章图片上传功能 
+3. 设置 Model 之间 hasMany，hasOne 等映射关系
+4. 检查为什么 / 路径没有被 router 解析到
 5. 阅读 Phalcon 的文档和代码，理解其框架
 6. Phalcon 和 EvaEngine 里让代码更完善和健壮的 Common Practice
 

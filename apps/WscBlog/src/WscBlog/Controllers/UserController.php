@@ -17,9 +17,6 @@ class UserController extends ControllerBase
 		if ($this->request->isPost()) {
 			$username = $this->request->getPost('name', 'string');
 			$password = $this->request->getPost('pw', 'string');
-			$crypt = new \Phalcon\Crypt();
-			// TODO... use a dynamic secret key OR store it in a secret place
-			$secretKey = "wsc_blog";
 			$user = Users::findFirst(array(
 				"(username = :username: AND password = :password:)",
 				'bind' => array(

@@ -1,0 +1,66 @@
+	<script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+	<!-- Content Start -->
+	<div class="contents">
+		<div class="container">
+			<div class="row article-page article-item">
+		        <!-- Left Side Start -->
+		    	<div class="col-md-12">
+					<div class="row">
+						<div class="col-md-12">
+			            	<!-- Article Start -->
+				        	<div class="panel">
+								<!-- Panel-heading Start -->
+								<div class="panel-heading">
+									<h2>
+										文章详细
+									</h2>
+								</div>
+								<!-- Panel-heading End -->
+								<!-- Panel-body Start -->
+								<div class="panel-body panel-no-padding listbox">
+						            <div class="col-md-2 visible-lg">
+		                                <div class='username'>
+											作者昵称（TODO... 给 Model 之间加上映射关系）
+		                                </div>
+					                </div>
+					                <div class="col-md-10">
+					                	<div class="article-title" style="clear:both;">
+					                        <h1 class="wrap_words" itemprop="headline"><?php echo $articleIter->title ?></h1>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-11 summary-jumbotron">
+				                        <p><i class="fa fa-quote-left fa-3x pull-left"></i><?php echo $articleIter->summary ?><i class="fa fa-quote-right"></i></p>
+                                    </div>
+						            <div class="col-md-12 article js-start-reading" itemprop="articleBody">
+										<?php echo $articleIter->text ?>
+                                    </div>									
+								</div>
+								<!-- Panel-body End -->
+							</div>
+							<!-- Article End -->
+							
+			            	<!-- Comment Start-->
+				        	<div class="panel">
+								<!-- Panel-heading Start -->
+								<div class="panel-heading">
+									<h2>
+										<i class="fa fa-comment-o"></i><?php echo '评论'; ?>
+									</h2>
+								</div>
+								<!-- Panel-body Start -->
+								<div class="panel-body panel-no-padding listbox">
+                                    <div class="col-md-12" id="ArticleCommentDiv">
+									</div>
+								</div>
+								<!-- Panel-body End -->
+							</div>
+							<!-- Comment End -->
+						</div>
+					</div>
+	        	</div>
+	        	<!-- Left Side End -->
+	        	
+	    	</div>
+		</div>
+	</div>
+	<!-- Content End -->

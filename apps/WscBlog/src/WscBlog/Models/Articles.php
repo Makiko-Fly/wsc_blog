@@ -6,7 +6,7 @@ namespace WscBlog\Models;
 class Articles extends \Eva\EvaEngine\Mvc\Model 
 {
 	public $id;
-	public $userId;
+	public $user_id;
 	public $title;
 	public $summary;
 	public $text;

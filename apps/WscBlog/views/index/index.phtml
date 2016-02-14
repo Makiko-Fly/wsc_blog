@@ -21,13 +21,13 @@
 									<div class="listbox-post-list">
 										<?php foreach ($pager->items as $article): ?>
 										<div class="media">
-											<a class="pull-left" href="">
+											<a class="pull-left" href="<?php echo $this->url->get('article/view/' . $article['id']) ?>">
 												<img class="media-object visible-xs" alt="" src="" />
 												<img class="media-object2 hidden-xs" alt="" src="" />
 											</a>
 											<div class="media-body">
 												<div class='post-title'>
-													<a href="">
+													<a href="<?php echo $this->url->get('article/view/' . $article['id']) ?>">
 														<h3>
 															<?php echo $article['title'] ?>
 														</h3>

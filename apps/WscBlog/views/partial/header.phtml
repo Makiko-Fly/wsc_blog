@@ -5,17 +5,16 @@
 				<!-- Top Menu Start -->
 	            <div class="col-md-12">
 	            	<div style="margin-top:10px;float:left;">
-	            		<a href="/">A WSC Demo Blog</a>
+	            		<a href="\home">A WSC Demo Blog</a>
 	            	</div>
 					
 					<?php if ($user = $this->session->get('auth')) { ?>					
 	            	<div>
 						<ul class="toolbar pull-right">							
-							<li class="dropdown">
+							<li>
 						    	<a href="/article/create" class="btn-u btn-u-purple hover-effect" rel="nofollow">
-									<i class="fa fa-pencil-square-o"></i>我要投稿
-								</a>
-								
+									<i class="fa fa-pencil-square-o"></i>写文章
+								</a>								
 								<a href="#" class="dropdown-toggle username" data-toggle="dropdown">
 									<span class="">欢迎您：<?php echo $user['name']; ?></span>
 								</a>
@@ -30,7 +29,7 @@
 		                <ul class="list-unstyled top-data">
 		                	<li>
 						    	<a href="/articles/create" class="btn-u btn-u-purple hover-effect" rel="nofollow">
-									<i class="fa fa-pencil-square-o"></i>我要投稿
+									<i class="fa fa-pencil-square-o"></i>写文章
 								</a>
 		                	</li>
 		                    <li>

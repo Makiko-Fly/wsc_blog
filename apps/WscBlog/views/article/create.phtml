@@ -9,7 +9,7 @@
 	<div class="container">
 	    <div class="row article-page article-item">
 	    	<!-- Left Side Start -->
-	        <div class="col-md-8">
+	        <div class="col-md-12">
 				<div class="row">
 					<div class="col-md-12">
 						<!-- Pickup Start -->
@@ -23,15 +23,8 @@
 							<!-- Panel-body Start -->
 							<div class="panel-body margin-bottom-20">
 								<div class="col-md-10">
-									<div class="viewtop-blocks margin-bottom-20">
-										<div class="row">
-											<div class="col-md-12">
-												<p>'*╮(๑•́ ₃•̀๑)╭ 有木有想要安利小伙伴的片子，或血淋淋的吐槽呢？请随意发挥</p>
-											</div>
-										</div>
-									</div>
 									<!-- Form START-->
-									<form method="post" action="/article/create">
+									<form method="post" action="/article/create" id="createArticleForm">
 										<input name="id" type="hidden">
 										<input name="cover_img_data" hidden='true'>
 
@@ -52,21 +45,55 @@
 										    </div>
 										    <div class="margin-bottom-20">
 											    <div id='currentCoverTitle' style='display:none;'>
-													<label>汝选取的封面</label>
+													<label>您选取的封面</label>
 												</div>
 											    <div class="cropped" id="croppedCoverImg">
-													<!-- <img src="" style="width:85px; height:63px;"></img> -->
+													<img src="" style="width:85px; height:63px;"></img>
 											    </div>
 											</div>
 										</div>
+										<script type="text/javascript" src="/plugin/cropbox/cropbox-min.js"></script>
+										<script type="text/javascript">
+										    $(window).load(function() {
+										        var options =
+										        {
+										            thumbBox: '.thumbBox',
+										            spinner: '.spinner',
+										            imgSrc: "<?php echo isset($article_data_url) ? $article_data_url : '';?>"
+										        }
+										        var cropper = $('.imageBox').cropbox(options);
+										        $('#ArticleCoverImgFile').on('change', function(){
+										            var reader = new FileReader();
+										            reader.onload = function(e) {
+										                options.imgSrc = e.target.result;
+										                cropper = $('.imageBox').cropbox(options);
+										            }
+										            reader.readAsDataURL(this.files[0]);
+										            this.files = [];
+										        })
+										        $('#btnCrop').on('click', function(){
+										            var img = cropper.getDataURL();
+										            $('#currentCoverTitle').show();
+										            $('#croppedCoverImg').html('<img src="'+img+'" style="width:85px; height:63px;">');
+										            $('#ArticleCoverImgData').val(img);
+										        })
+										        $('#btnZoomIn').on('click', function(){
+										            cropper.zoomIn();
+										        })
+										        $('#btnZoomOut').on('click', function(){
+										            cropper.zoomOut();
+										        })
+										    });
+										</script>
 
-									    <label>概括<span class="color-red">*</span></label>
+									    <label>概要 <span class="color-red">*</span></label>
 										<input name="summary" type="text" class="form-control margin-bottom-5" rows="5">
 									    <label>正文 <span class="color-red">*</span></label><br/>
 									    <div class="col-12">
-											<input name="artileText" type="textarea" class="ckeditor" rows='10' colos='80' id="ArticleText">
+											<input name="placeHolder" type="textarea" class="ckeditor" rows='10' colos='80' id="articleText">
+											<input name="text" type="hidden" id="realTextInput">
 											<script type="text/javascript">
-												var editor = CKEDITOR.replace( 'ArticleText', {
+												var editor = CKEDITOR.replace( 'articleText', {
 												    	// filebrowserBrowseUrl: '/articles/imgBrowse',
 														filebrowserUploadUrl: '/articles/upload',
 													    on: {
@@ -94,7 +121,14 @@
 									    <hr>
 									    <div class="row">
 									        <div class="col-lg-12 text-right">  
-												<input type='submit' value='保存'>
+												<input type='button' onclick='submitArticle()' value='保存'>
+												<script type="text/javascript">
+													function submitArticle() { 
+														var data = CKEDITOR.instances.articleText.getData();
+														document.getElementById('realTextInput').value = data;
+														document.getElementById('createArticleForm').submit();
+													}
+												</script>
 									        </div>
 									    </div>
 									</form>

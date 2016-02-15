@@ -15,6 +15,11 @@ class Articles extends \Eva\EvaEngine\Mvc\Model
 	
 	protected $tableName = 'articles';
 	
+    public function initialize()
+    {
+        $this->belongsTo("user_id", "WscBlog\Models\Users", "id", array('alias' => 'User'));
+    }
+	
 	public function createFindBuilder($queryParams) 
 	{
 		$builder = $this->getDI()->getModelsManager()->createBuilder($queryParams);

@@ -13,5 +13,4 @@ class Users extends \Eva\EvaEngine\Mvc\Model
 	public $modified;
 	
 	protected $tableName = 'users';
-
 }

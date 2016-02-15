@@ -51,6 +51,7 @@ class ArticleController extends ControllerBase
 			$this->flash->error('文章不存在或已被删除');
 			$this->response->redirect('home');			
 		} else {
+			mdl_echo('author name: ' . var_export($article->User->username, true));
 			$this->view->setVar('articleIter', $article);
 		}
 	}
